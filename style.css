@@ -111,12 +111,51 @@ body.dark .toggle-switch .slider {
   h1 {
     font-size: 2.5rem;
   }
-  
-  /* Readings */
-  .readings p {
-    font-size: 1.2rem;
-    margin: 0.3rem 0;
+  .readings{
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
   }
+  /* Readings */
+  .readings {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: auto;
+    max-width: 1200px;
+  }
+
+  .readings div {
+    flex: 1 1 calc(16.66% - 1rem); /* Ensures 6 cards fit in a row */
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    padding: 1rem; /* Increased padding for better spacing */
+    border-radius: 10px;
+    background-color: #444444; /* Slightly lighter dark background */
+    transition: background-color 0.4s, color 0.4s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .readings div p {
+    margin: 0;
+    padding: 0.5rem;
+  }
+
+  body.light .readings div {
+    background-color: #f9f9f9;
+    color: #242323fd;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Softer shadow for light mode */
+  }
+
+  body.dark .readings div {
+    background-color: #2e2e2e; /* Slightly lighter dark mode background */
+    color: #ffffff; /* Brighter text for better readability */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+
   
   /* Status Colors */
   .status {
@@ -141,15 +180,18 @@ body.dark .toggle-switch .slider {
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 2rem;
-    gap: 4rem;
+    gap: 2rem;
    
   }
   
   .chart-container {
     padding: 1rem;
     border-radius: 15px;
-    width: 500px;
-    height: 300px;
+    width: 400px;
+    height: 250px;
     transition: background-color 0.4s, box-shadow 0.4s;
   }
-  
+  /* Optional: To style new readings */
+.readings p span {
+  font-weight: bold;
+}

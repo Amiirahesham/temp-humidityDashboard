@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Temperature & Humidity Monitor</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Environment & Smart Room Monitor</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="dark">
 
   <header>
-    <h1>Environment Monitor</h1>
+    <h1>Smart Environment Monitor</h1>
     <button id="themeToggle" class="toggle-switch">
       <div class="slider"></div>
     </button>
-    
   </header>
 
-  <div class="readings">
-    <p>🌡️ Temperature: <span id="temperature">--</span> °C</p>
-    <p>💧 Humidity: <span id="humidity">--</span> %</p>
-    <p>Status: <span id="status" class="status">--</span></p>
-  </div>
+<div class="readings">
+  <div>  <p>🌡️ Temperature: <span id="temperature">--</span> °C</p></div>
+    <div><p>💧 Humidity: <span id="humidity">--</span> %</p></div>
+    <div><p>🔥 Gas Level: <span id="gas">--</span></p></div>
+    <div><p>👥 People Count: <span id="count">--</span></p></div>
+      <div><p>🌀 Fan Status: <span id="fanStatus">--</span></p></div>
+        <div><p>Status: <span id="status" class="status">--</span></p></div>
+</div>
 
   <div class="charts">
     <div class="chart-container">
@@ -29,9 +32,11 @@
     <div class="chart-container">
       <canvas id="humidityChart"></canvas>
     </div>
+    <div class="chart-container">
+      <canvas id="gasChart"></canvas>
+    </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
